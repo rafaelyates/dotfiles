@@ -1,0 +1,109 @@
+{
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shellArgs.osx": ["-l", "-i"],
+  "terminal.integrated.env.osx": {
+    "CHERE_INVOKING": "1"
+  },
+  "terminal.integrated.fontFamily": "'Source Code Pro for Powerline'",
+  "terminal.integrated.fontSize": 14,
+  "explorer.decorations.badges": true,
+  "editor.renderWhitespace": "all",
+  "editor.minimap.enabled": true,
+  "editor.autoIndent": "full",
+  "editor.rulers": [140],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnPaste": true,
+  "editor.detectIndentation": false,
+  "editor.tabCompletion": "on",
+  "editor.lineHeight": 24,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Hack, 'Fira Code', 'Input Mono', 'Ubuntu Mono', 'IBM Plex Mono'",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.colorDecorators": false,
+  "editor.suggestSelection": "first",
+  "editor.defaultFormatter": "vscode.configuration-editing",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.tokenColorCustomizations": {
+    "semanticHighlighting": true
+  },
+  "emmet.includeLanguages": {
+    "typescript": "typescriptreact",
+    "javascript": "javascriptreact"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "window.zoomLevel": 1,
+  "search.showLineNumbers": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "eslint.alwaysShowStatus": true,
+  "typescriptHero.imports.organizeOnSave": true,
+  "typescriptHero.imports.insertSemicolons": true,
+  "typescriptHero.imports.multiLineWrapThreshold": 1000,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.jediEnabled": false,
+  "color-highlight.markerType": "dot-before",
+  "color-highlight.languages": ["*"],
+  "workbench.fontAliasing": "antialiased",
+  "workbench.iconTheme": "material-icon-theme",
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xhtml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sass]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[plist]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
+}

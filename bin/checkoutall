@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+for SUBDIR in $(ls | xargs); do
+  cd ${SUBDIR}
+  DIRNAME=$(dirname $(pwd))
+
+  SERVICE=$(basename "${SUBDIR}")
+  PROJECT=$(basename "${DIRNAME}")
+
+  BRANCH=$(git symbolic-ref --short HEAD)
+
+  git show-branch $1 > /dev/null 2>&1
+
+  if [ $? = 0 ]; then
+    git checkout $1
+  else
+    git checkout -t remotes/origin/$1
+  fi
+
+
+  CHECKOUT=$(git symbolic-ref --short HEAD)
+
+  echo ">>>> ${PROJECT}/${SERVICE} [${BRANCH} => ${CHECKOUT}]"
+
+  cd ..
+  echo ""
+done

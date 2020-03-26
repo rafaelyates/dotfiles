@@ -1,0 +1,33 @@
+[user]
+  name = Rafael Yates
+  email = r.yates@live.com
+[push]
+  default = simple
+  followTags = true
+[core]
+  filemode = true
+  ignorecase = false
+  pager = less -FRXiMq
+  autocrlf = input
+  editor = vim
+  whitespace = cr-at-eol
+  logallrefupdates = true
+  symlinks = true
+  eol = lf
+  preloadindex = true
+  fscache = true
+[color]
+  ui = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  diff = auto
+[alias]
+  treef = log --decorate --oneline --graph --abbrev-commit --all --topo-order
+  tree = log --decorate --oneline --graph --abbrev-commit --all --topo-order -30
+  last = log -1 --all --decorate --stat
+  search = log -p -S
+  rank = shortlog -sn --no-merges
+  unstage = reset HEAD --
+  discard = checkout --
+  st = status

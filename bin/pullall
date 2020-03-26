@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+for SUBDIR in $(ls | xargs); do
+  cd ${SUBDIR}
+  DIRNAME=$(dirname $(pwd))
+
+  SERVICE=$(basename "${SUBDIR}")
+  PROJECT=$(basename "${DIRNAME}")
+
+  BRANCH=$(git symbolic-ref --short HEAD)
+
+  echo ">>>> ${PROJECT}/${SERVICE} [${BRANCH}]"
+
+  git fetch
+  git pull
+
+  cd ..
+  echo ""
+done

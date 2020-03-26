@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+from sys import stdin
+from json import dumps, loads
+from pygments import highlight
+from pygments.lexers import JsonLexer
+from pygments.formatters import TerminalFormatter
+
+if __name__ == '__main__':
+  received_json = ''.join(stdin.readlines())
+
+  unicode_json = loads(received_json.encode('utf-8'))
+  formatted_json = dumps(unicode_json, sort_keys=True, indent=4)
+
+  colorful_json = highlight(formatted_json, JsonLexer(), TerminalFormatter())
+  print("\n{}".format(colorful_json))
