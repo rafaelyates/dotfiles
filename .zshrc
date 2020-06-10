@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/vntrays/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -63,15 +63,12 @@ ZSH_THEME="hyperzsh"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Custom syntax highlight
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting tmux)
+plugins=(git gitfast zsh-autosuggestions zsh-syntax-highlighting tmux docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,16 +100,14 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias for programs
 alias vi="vim"
-alias mvim="mvim -v"
 alias python="python3"
 alias pip="pip3"
 
 # Alias for git
 alias rebase="git fetch && git pull --rebase"
 
-# source the git-completion if it exists
-if [ -f "${HOME}/.zsh/git_completion.zsh" ]; then
-  source "${HOME}/.zsh/git_completion.zsh"
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
 fi
 
 # Set PATH so it includes user's private bin if it exists
@@ -120,26 +115,12 @@ if [ -d "${HOME}/bin" ]; then
   PATH="${HOME}/bin:${PATH}"
 fi
 
-export NVM_DIR="${HOME}/.nvm"
-# This loads nvm
-[ -s "${NVM_DIR}/nvm.sh" ] && . "${NVM_DIR}/nvm.sh"
-# This loads nvm bash_completion
-[ -s "${NVM_DIR}/bash_completion" ] && . "${NVM_DIR}/bash_completion"
-
-export ANDROID_HOME="${HOME}/Library/Android/sdk"
-
-# No problem in exporting it multiple times
+export ANDROID_HOME="${HOME}/Android/sdk"
 export PATH="${PATH}:${ANDROID_HOME}/emulator"
 export PATH="${PATH}:${ANDROID_HOME}/tools"
 export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
 export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
-export P3_HOME="${HOME}/Library/Python/3.7"
-export JENV_HOME="${HOME}/.jenv"
-export M2_HOME="${HOME}/middleware/maven/apache-maven-3.6.3"
-
-export PATH="${PATH}:${P3_HOME}/bin"
-export PATH="${PATH}:${JENV_HOME}/bin"
-export PATH="${PATH}:${M2_HOME}/bin"
-
-eval "$(jenv init -)"
+export ASDF_HOME="${HOME}/.asdf"
+[ -s "${ASDF_HOME}/asdf.sh" ] && . "${ASDF_HOME}/asdf.sh"
+[ -s "${ASDF_HOME}/.asdf/completions/asdf.bash" ] && . "${ASDF_HOME}/.asdf/completions/asdf.bash"

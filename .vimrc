@@ -29,11 +29,10 @@ set autoread                    " set to auto read when a file is changed from t
 set nowrap                      " don't wrap lines
 
 " set backup and keep a backup file
-set viminfo='20,\"50         	  " read/write a .viminfo file, don't store more than 50 lines of registers
+set viminfo='20,\"50            " read/write a .viminfo file, don't store more than 50 lines of registers
 set history=700                 " keep 700 lines of command line history
 
 " syntax configurations
-syntax on                       " turn syntax highlighting on by default
 set path+=**                    " search down into subfolders
 set hlsearch                    " highlight searches without moving
 set incsearch                   " do incremental searching
@@ -53,6 +52,12 @@ set magic                       " for regular expressions turn magic on
 
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
+
+" Vim5 and later versions support syntax highlighting. Uncommenting the next
+" line enables syntax highlighting by default.
+if has("syntax")
+  syntax on
+endif
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -121,3 +126,8 @@ filetype plugin indent on
 
 " Don't wake up system with blinking cursor:
 let &guicursor = &guicursor . ",a:blinkon0"
+
+" Source a global configuration file if available
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
