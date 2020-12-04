@@ -115,12 +115,17 @@ if [ -d "${HOME}/bin" ]; then
   PATH="${HOME}/bin:${PATH}"
 fi
 
-export ANDROID_HOME="${HOME}/Android/sdk"
-export PATH="${PATH}:${ANDROID_HOME}/emulator"
-export PATH="${PATH}:${ANDROID_HOME}/tools"
-export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
-export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+# export ANDROID_HOME="${HOME}/Android/Sdk"
+# export PATH="${PATH}:${ANDROID_HOME}/emulator"
+# export PATH="${PATH}:${ANDROID_HOME}/tools"
+# export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
+# export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
 export ASDF_HOME="${HOME}/.asdf"
 [ -s "${ASDF_HOME}/asdf.sh" ] && . "${ASDF_HOME}/asdf.sh"
-[ -s "${ASDF_HOME}/.asdf/completions/asdf.bash" ] && . "${ASDF_HOME}/.asdf/completions/asdf.bash"
+[ -s "${ASDF_HOME}/completions/asdf.bash" ] && . "${ASDF_HOME}/completions/asdf.bash"
+[ -s "${ASDF_HOME}/plugins/java/set-java-home.zsh" ] && . "${ASDF_HOME}/plugins/java/set-java-home.zsh"
+
+# export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+# export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
+
